@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!--  -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+-->
+<TextureAtlas imagePath="texture.png" width="1024" height="1024">
+    <sprite n="Brown Block" x="210" y="384" w="101" h="121" oX="0" oY="50" oW="101" oH="171"/>
+    <sprite n="Character Boy" x="526" y="312" w="67" h="89" oX="17" oY="62" oW="101" oH="171"/>
+    <sprite n="Character Cat Girl" x="938" y="290" w="69" h="91" oX="16" oY="60" oW="101" oH="171"/>
+    <sprite n="Character Horn Girl" x="942" y="2" w="77" h="91" oX="7" oY="60" oW="101" oH="171"/>
+    <sprite n="Character Pink Girl" x="942" y="96" w="77" h="89" oX="12" oY="62" oW="101" oH="171"/>
+    <sprite n="Character Princess Girl" x="938" y="188" w="75" h="99" oX="13" oY="52" oW="101" oH="171"/>
+    <sprite n="Chest Closed" x="210" y="260" w="101" h="121" oX="0" oY="50" oW="101" oH="171"/>
+    <sprite n="Chest Lid" x="526" y="224" w="101" h="85" oX="0" oY="50" oW="101" oH="171"/>
+    <sprite n="Chest Open" x="214" y="2" w="101" h="121" oX="0" oY="50" oW="101" oH="171"/>
+    <sprite n="Dirt Block" x="210" y="136" w="101" h="121" oX="0" oY="50" oW="101" oH="171"/>
+    <sprite n="Door Tall Closed" x="2" y="676" w="101" h="151" oX="0" oY="20" oW="101" oH="171"/>
+    <sprite n="Door Tall Open" x="318" y="302" w="101" h="79" oX="0" oY="92" oW="101" oH="171"/>
+    <sprite n="Enemy Bug" x="836" y="220" w="99" h="77" oX="0" oY="77" oW="101" oH="171"/>
+    <sprite n="Gem Blue" x="838" y="2" w="101" h="113" oX="0" oY="57" oW="101" oH="171"/>
+    <sprite n="Gem Green" x="734" y="2" w="101" h="113" oX="0" oY="57" oW="101" oH="171"/>
+    <sprite n="Gem Orange" x="630" y="2" w="101" h="113" oX="0" oY="57" oW="101" oH="171"/>
+    <sprite n="Grass Block" x="110" y="2" w="101" h="131" oX="0" oY="40" oW="101" oH="171"/>
+    <sprite n="Heart" x="630" y="228" w="89" h="91" oX="7" oY="47" oW="101" oH="171"/>
+    <sprite n="Key" x="722" y="228" w="59" h="99" oX="17" oY="56" oW="101" oH="171"/>
+    <sprite n="Plain Block" x="110" y="892" w="101" h="121" oX="0" oY="50" oW="101" oH="171"/>
+    <sprite n="Ramp East" x="422" y="2" w="101" h="119" oX="0" oY="52" oW="101" oH="171"/>
+    <sprite n="Ramp North" x="422" y="300" w="101" h="81" oX="0" oY="90" oW="101" oH="171"/>
+    <sprite n="Ramp South" x="106" y="768" w="101" h="121" oX="0" oY="50" oW="101" oH="171"/>
+    <sprite n="Ramp West" x="318" y="2" w="101" h="119" oX="0" oY="52" oW="101" oH="171"/>
+    <sprite n="Rock" x="836" y="118" w="99" h="99" oX="1" oY="65" oW="101" oH="171"/>
+    <sprite n="Roof East" x="214" y="878" w="101" h="119" oX="0" oY="52" oW="101" oH="171"/>
+    <sprite n="Roof North East" x="422" y="212" w="101" h="85" oX="0" oY="86" oW="101" oH="171"/>
+    <sprite n="Roof North West" x="422" y="124" w="101" h="85" oX="0" oY="86" oW="101" oH="171"/>
+    <sprite n="Roof North" x="318" y="218" w="101" h="81" oX="0" oY="90" oW="101" oH="171"/>
+    <sprite n="Roof South East" x="106" y="518" w="101" h="123" oX="0" oY="48" oW="101" oH="171"/>
+    <sprite n="Roof South West" x="106" y="392" w="101" h="123" oX="0" oY="48" oW="101" oH="171"/>
+    <sprite n="Roof South" x="106" y="644" w="101" h="121" oX="0" oY="50" oW="101" oH="171"/>
+    <sprite n="Roof West" x="210" y="756" w="101" h="119" oX="0" oY="52" oW="101" oH="171"/>
+    <sprite n="Selector" x="2" y="2" w="101" h="171"/>
+    <sprite n="Shadow East" x="596" y="312" w="21" h="81" oX="80" oY="50" oW="101" oH="171"/>
+    <sprite n="Shadow North East" x="808" y="228" w="21" h="51" oX="80" oY="50" oW="101" oH="171"/>
+    <sprite n="Shadow North West" x="56" y="970" w="51" h="51" oX="0" oY="50" oW="101" oH="171"/>
+    <sprite n="Shadow North" x="318" y="124" w="101" h="91" oX="0" oY="9" oW="101" oH="171"/>
+    <sprite n="Shadow Side West" x="784" y="300" w="51" h="41" oX="0" oY="130" oW="101" oH="171"/>
+    <sprite n="Shadow South East" x="784" y="228" w="21" h="51" oX="80" oY="80" oW="101" oH="171"/>
+    <sprite n="Shadow South West" x="2" y="970" w="51" h="51" oX="0" oY="80" oW="101" oH="171"/>
+    <sprite n="Shadow South" x="214" y="1000" w="101" h="21" oX="0" oY="79" oW="101" oH="171"/>
+    <sprite n="Shadow West" x="620" y="322" w="51" h="81" oX="0" oY="50" oW="101" oH="171"/>
+    <sprite n="SpeechBubble" x="630" y="118" w="101" h="107" oX="0" oY="64" oW="101" oH="171"/>
+    <sprite n="Star" x="526" y="120" w="101" h="101" oX="0" oY="51" oW="101" oH="171"/>
+    <sprite n="Stone Block Tall" x="2" y="346" w="101" h="163" oX="0" oY="8" oW="101" oH="171"/>
+    <sprite n="Stone Block" x="106" y="266" w="101" h="123" oX="0" oY="48" oW="101" oH="171"/>
+    <sprite n="Tree Short" x="734" y="118" w="99" h="107" oX="0" oY="55" oW="101" oH="171"/>
+    <sprite n="Tree Tall" x="2" y="830" w="101" h="137" oX="0" oY="31" oW="101" oH="171"/>
+    <sprite n="Tree Ugly" x="526" y="2" w="101" h="115" oX="0" oY="54" oW="101" oH="171"/>
+    <sprite n="Wall Block Tall" x="2" y="176" w="101" h="167" oX="0" oY="4" oW="101" oH="171"/>
+    <sprite n="Wall Block" x="106" y="136" w="101" h="127" oX="0" oY="44" oW="101" oH="171"/>
+    <sprite n="Water Block" x="210" y="632" w="101" h="121" oX="0" oY="50" oW="101" oH="171"/>
+    <sprite n="Window Tall" x="2" y="512" w="101" h="161" oX="0" oY="10" oW="101" oH="171"/>
+    <sprite n="Wood Block" x="210" y="508" w="101" h="121" oX="0" oY="50" oW="101" oH="171"/>
+</TextureAtlas>

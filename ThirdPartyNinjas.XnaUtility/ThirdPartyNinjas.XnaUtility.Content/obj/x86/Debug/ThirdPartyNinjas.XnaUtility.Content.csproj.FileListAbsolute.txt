@@ -1,0 +1,7 @@
+C:\Users\Primary\Documents\Visual Studio 2013\Projects\BeatupXNA\ThirdPartyNinjas.XnaUtility\ThirdPartyNinjas.XnaUtility.Content\bin\x86\Debug\ThirdPartyNinjas.XnaUtility.Content.dll
+C:\Users\Primary\Documents\Visual Studio 2013\Projects\BeatupXNA\ThirdPartyNinjas.XnaUtility\ThirdPartyNinjas.XnaUtility.Content\bin\x86\Debug\ThirdPartyNinjas.XnaUtility.Content.pdb
+C:\Users\Primary\Documents\Visual Studio 2013\Projects\BeatupXNA\ThirdPartyNinjas.XnaUtility\ThirdPartyNinjas.XnaUtility.Content\bin\x86\Debug\ThirdPartyNinjas.XnaUtility.dll
+C:\Users\Primary\Documents\Visual Studio 2013\Projects\BeatupXNA\ThirdPartyNinjas.XnaUtility\ThirdPartyNinjas.XnaUtility.Content\bin\x86\Debug\ThirdPartyNinjas.XnaUtility.pdb
+C:\Users\Primary\Documents\Visual Studio 2013\Projects\BeatupXNA\ThirdPartyNinjas.XnaUtility\ThirdPartyNinjas.XnaUtility.Content\obj\x86\Debug\ThirdPartyNinjas.XnaUtility.Content.csprojResolveAssemblyReference.cache
+C:\Users\Primary\Documents\Visual Studio 2013\Projects\BeatupXNA\ThirdPartyNinjas.XnaUtility\ThirdPartyNinjas.XnaUtility.Content\obj\x86\Debug\ThirdPartyNinjas.XnaUtility.Content.dll
+C:\Users\Primary\Documents\Visual Studio 2013\Projects\BeatupXNA\ThirdPartyNinjas.XnaUtility\ThirdPartyNinjas.XnaUtility.Content\obj\x86\Debug\ThirdPartyNinjas.XnaUtility.Content.pdb

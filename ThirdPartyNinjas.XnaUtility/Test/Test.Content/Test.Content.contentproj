@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <ProjectGuid>{A7313DCC-5FBB-43DF-8C33-64335FD3A146}</ProjectGuid>
+    <ProjectGuid>{98D660A0-EC7E-4F88-88E1-DEAC37C3BB77}</ProjectGuid>
     <ProjectTypeGuids>{96E2B04D-8817-42c6-938A-82C39BA4D311};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -19,7 +19,7 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup>
-    <RootNamespace>BeatupXNAContent</RootNamespace>
+    <RootNamespace>Test.WindowsContent</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.EffectImporter, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
@@ -30,37 +30,31 @@
     <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.VideoImporters, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="house.png">
-      <Name>house</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="face.xml">
-      <Name>face_xml</Name>
-      <Importer>TextureAtlasImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="face.json">
-      <Name>face_json</Name>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Compile Include="face.png">
-      <Name>facepng</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\ThirdPartyNinjas.XnaUtility\ThirdPartyNinjas.XnaUtility.Content\ThirdPartyNinjas.XnaUtility.Content.csproj">
-      <Project>{2588e0ce-3d79-48d4-9999-519435ec690d}</Project>
+    <ProjectReference Include="..\..\ThirdPartyNinjas.XnaUtility.Content\ThirdPartyNinjas.XnaUtility.Content.csproj">
+      <Project>{2588E0CE-3D79-48D4-9999-519435EC690D}</Project>
       <Name>ThirdPartyNinjas.XnaUtility.Content</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="atlas.json">
+      <Name>atlasJSON</Name>
+      <Importer>TextureAtlasImporter</Importer>
+      <Processor>TextureAtlasProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="texture.png">
+      <Name>texture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="atlas.xml">
+      <Name>atlasXML</Name>
+      <Importer>TextureAtlasImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 

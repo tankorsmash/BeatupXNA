@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Xml.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -8,6 +10,8 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+
+using ThirdPartyNinjas.XnaUtility;
 
 namespace BeatupXNA
 {
@@ -46,6 +50,7 @@ namespace BeatupXNA
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
             // TODO: use this.Content to load your game content here
         }
 
@@ -89,11 +94,17 @@ namespace BeatupXNA
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
+            Stream stream = TitleContainer.OpenStream("Content\\face.xml");
+            XDocument doc = XDocument.Load(stream);
+
+            TextureAtlas qwe = Content.Load<TextureAtlas>("face_xml");
+            TextureRegion region = qwe.GetRegion("s_baby.png");
 
 
-            Texture2D background = Content.Load<Texture2D>("house");
+
+            Texture2D sprite_sheet = Content.Load<Texture2D>("facepng");
             spriteBatch.Begin();
-            spriteBatch.Draw(background, new Rectangle(0, 0, 800, 480), Color.White );
+            spriteBatch.Draw(sprite_sheet, new Rectangle(0, 0, region.Bounds.Width, region.Bounds.Height), region.Bounds, Color.White );
             spriteBatch.End();
 
             // TODO: Add your drawing code here

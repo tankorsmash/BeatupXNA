@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:5b06af32f8928412026a58d321866657:a5c6b7cd20b8d93453210019702b620e:0ab5599cf0cafd322b3520be6cccc74d$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+-->
+<TextureAtlas imagePath="face.png" width="64" height="659">
+    <sprite n="brickwall.png" x="2" y="54" w="50" h="50" pX="0.5" pY="0.5"/>
+    <sprite n="coin_flat.png" x="32" y="642" w="15" h="15" pX="0.5" pY="0.5"/>
+    <sprite n="coin_left.png" x="49" y="642" w="11" h="15" pX="0.5" pY="0.5"/>
+    <sprite n="coin_right.png" x="39" y="158" w="15" h="11" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="coin_side.png" x="39" y="245" w="5" h="15" pX="0.5" pY="0.5"/>
+    <sprite n="f_eyes_open.png" x="2" y="272" w="29" h="37" pX="0.5" pY="0.5"/>
+    <sprite n="f_face_neutral.png" x="33" y="272" w="29" h="35" pX="0.5" pY="0.5"/>
+    <sprite n="f_face_neutral_2eye.png" x="33" y="309" w="29" h="35" pX="0.5" pY="0.5"/>
+    <sprite n="f_face_neutral_eye.png" x="2" y="311" w="29" h="35" pX="0.5" pY="0.5"/>
+    <sprite n="f_flinch.png" x="33" y="346" w="29" h="35" pX="0.5" pY="0.5"/>
+    <sprite n="f_gritted_teeth.png" x="2" y="533" w="28" h="35" pX="0.5" pY="0.5"/>
+    <sprite n="f_gritted_teeth_one.png" x="2" y="570" w="28" h="35" pX="0.5" pY="0.5"/>
+    <sprite n="f_look_left.png" x="2" y="348" w="29" h="35" pX="0.5" pY="0.5"/>
+    <sprite n="f_look_left_2eye.png" x="33" y="383" w="29" h="35" pX="0.5" pY="0.5"/>
+    <sprite n="f_look_left_eye.png" x="2" y="385" w="29" h="35" pX="0.5" pY="0.5"/>
+    <sprite n="f_look_left_teeth.png" x="33" y="420" w="29" h="35" pX="0.5" pY="0.5"/>
+    <sprite n="f_look_right.png" x="2" y="422" w="29" h="35" pX="0.5" pY="0.5"/>
+    <sprite n="f_look_right_2eye.png" x="33" y="457" w="29" h="35" pX="0.5" pY="0.5"/>
+    <sprite n="f_look_right_eye.png" x="2" y="459" w="29" h="35" pX="0.5" pY="0.5"/>
+    <sprite n="f_look_right_teeth.png" x="33" y="494" w="29" h="35" pX="0.5" pY="0.5"/>
+    <sprite n="f_side_closed.png" x="2" y="607" w="28" h="35" pX="0.5" pY="0.5"/>
+    <sprite n="f_teeth.png" x="2" y="496" w="29" h="35" pX="0.5" pY="0.5"/>
+    <sprite n="f_teeth_one.png" x="33" y="531" w="29" h="35" pX="0.5" pY="0.5"/>
+    <sprite n="f_teeth_side.png" x="32" y="568" w="26" h="35" pX="0.5" pY="0.5"/>
+    <sprite n="f_teeth_side_one.png" x="32" y="605" w="26" h="35" pX="0.5" pY="0.5"/>
+    <sprite n="ff_beard.png" x="54" y="83" w="8" h="19" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ff_beard2.png" x="39" y="224" w="5" h="19" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ff_glasses.png" x="54" y="54" w="8" h="27" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ff_hat.png" x="39" y="106" w="19" h="34" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ff_monocle.png" x="50" y="171" w="12" h="11" pX="0.5" pY="0.5"/>
+    <sprite n="ff_moustache.png" x="55" y="2" w="5" h="17" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="fist_hit.png" x="2" y="2" w="51" h="50" pX="0.5" pY="0.5"/>
+    <sprite n="fist_moving.png" x="2" y="173" w="46" h="49" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="fist_neutral.png" x="2" y="224" w="35" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="gore1.png" x="39" y="142" w="15" h="14" pX="0.5" pY="0.5"/>
+    <sprite n="gore2.png" x="2" y="644" w="12" h="13" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="gore3.png" x="39" y="262" w="9" h="8" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="gore4.png" x="50" y="184" w="12" h="11" pX="0.5" pY="0.5"/>
+    <sprite n="gore5.png" x="50" y="197" w="10" h="15" pX="0.5" pY="0.5"/>
+    <sprite n="gore6.png" x="56" y="142" w="6" h="8" pX="0.5" pY="0.5"/>
+    <sprite n="gore7.png" x="16" y="644" w="10" h="13" pX="0.5" pY="0.5"/>
+    <sprite n="gore8.png" x="46" y="226" w="14" h="15" pX="0.5" pY="0.5"/>
+    <sprite n="gore9.png" x="50" y="214" w="10" h="10" pX="0.5" pY="0.5"/>
+    <sprite n="s_baby.png" x="2" y="106" w="35" h="65" pX="0.5" pY="0.5"/>
+</TextureAtlas>
