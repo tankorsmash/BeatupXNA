@@ -1,0 +1,1 @@
+c:\users\primary\documents\visual studio 2013\Projects\BeatupXNA\BeatupXNA\BeatupXNAContent\obj\Xbox 360\Debug\BeatupXNAContent.contentprojResolveAssemblyReference.cache
