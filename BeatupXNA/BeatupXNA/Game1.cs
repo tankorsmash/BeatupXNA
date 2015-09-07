@@ -15,6 +15,37 @@ using ThirdPartyNinjas.XnaUtility;
 
 namespace BeatupXNA
 {
+    public class Sprite
+    {
+        private Game1 game;
+        TextureAtlas atlas;
+        Texture2D sheet;
+
+        string name;
+        TextureRegion region;
+
+        int x;
+        int y;
+
+        public Sprite (Game1 game, string atlas_name, string sheet_name, string sprite_name) 
+        {
+
+            atlas = game.Content.Load<TextureAtlas>(atlas_name);
+            region = atlas.GetRegion(sprite_name);
+
+            sheet = game.Content.Load<Texture2D>(sheet_name);
+
+            x = 0;
+            y = 0;
+        }
+
+        public void Draw (SpriteBatch sb)
+        {
+            Rectangle rect = new Rectangle(x, y, region.Bounds.Width, region.Bounds.Height);
+            sb.Draw(sheet, rect, region.Bounds, Color.White);
+        }
+    };
+
     /// <summary>
     /// This is the main type for your game
     /// </summary>
@@ -94,17 +125,10 @@ namespace BeatupXNA
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            Stream stream = TitleContainer.OpenStream("Content\\face.xml");
-            XDocument doc = XDocument.Load(stream);
+            Sprite sprite = new Sprite(this, "face_xml", "facepng", "s_baby.png");
 
-            TextureAtlas qwe = Content.Load<TextureAtlas>("face_xml");
-            TextureRegion region = qwe.GetRegion("s_baby.png");
-
-
-
-            Texture2D sprite_sheet = Content.Load<Texture2D>("facepng");
             spriteBatch.Begin();
-            spriteBatch.Draw(sprite_sheet, new Rectangle(0, 0, region.Bounds.Width, region.Bounds.Height), region.Bounds, Color.White );
+            sprite.Draw(spriteBatch);
             spriteBatch.End();
 
             // TODO: Add your drawing code here
