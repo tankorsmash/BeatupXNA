@@ -27,6 +27,8 @@ namespace BeatupXNA
         public int x;
         public int y;
 
+        public bool flippedX;
+
         public float scale_x;
         public float scale_y;
 
@@ -40,6 +42,8 @@ namespace BeatupXNA
 
             x = 0;
             y = 0;
+
+            flippedX = false;
 
             scale_x = 4.0f;
             scale_y = 4.0f;
@@ -82,7 +86,7 @@ namespace BeatupXNA
         public void Draw (SpriteBatch sb)
         {
             Rectangle rect = GetDrawableRect();
-            sb.Draw(sheet, rect, region.Bounds, Color.White);
+            sb.Draw(sheet, rect, region.Bounds, Color.White, 0, Vector2.Zero, flippedX ? SpriteEffects.FlipHorizontally : SpriteEffects.None, 0);
         }
     };
 
@@ -95,6 +99,8 @@ namespace BeatupXNA
         SpriteBatch spriteBatch;
 
         private Sprite face;
+        public Sprite left_fist;
+        public Sprite right_fist;
 
         public Game1()
         {
@@ -129,6 +135,15 @@ namespace BeatupXNA
 
             face.x = this.GraphicsDevice.Viewport.Width/2;
             face.y = this.GraphicsDevice.Viewport.Height/2;
+
+            left_fist = new Sprite(this, "face_xml", "facepng", "fist_neutral.png");
+            left_fist.x = face.x - 200;
+            left_fist.y = face.y + 200;
+            left_fist.flippedX = true;
+
+            right_fist = new Sprite(this, "face_xml", "facepng", "fist_neutral.png");
+            right_fist.x = face.x + 200;
+            right_fist.y = face.y + 200;
 
 
             // TODO: use this.Content to load your game content here
@@ -176,6 +191,9 @@ namespace BeatupXNA
             spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.NonPremultiplied, SamplerState.PointClamp, DepthStencilState.Default, RasterizerState.CullNone);
 
             face.Draw(spriteBatch);
+            left_fist.Draw(spriteBatch);
+            right_fist.Draw(spriteBatch);
+
             spriteBatch.End();
 
             // TODO: Add your drawing code here
