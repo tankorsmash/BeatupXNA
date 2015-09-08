@@ -89,7 +89,7 @@ namespace BeatupXNA
         public void Draw (SpriteBatch sb)
         {
             Rectangle rect = GetDrawableRect();
-            sb.Draw(sheet, rect, region.Bounds, Color.White, rotation, Vector2.Zero, flippedX ? SpriteEffects.FlipHorizontally : SpriteEffects.None, 0);
+            sb.Draw(sheet, rect, region.Bounds, Color.White, rotation, new Vector2(0.5f, 0.5f), flippedX ? SpriteEffects.FlipHorizontally : SpriteEffects.None, 0);
         }
     };
 
@@ -189,24 +189,26 @@ namespace BeatupXNA
                 // left_fist.x = 5;
                 left_fist.x = face.x - 100;
                 left_fist.y = face.y + 50;
-                // left_fist.rotation = -0.5f;
+                left_fist.rotation = 100/360f;
             }
             else
             {
                 left_fist.x = face.x - 200;
                 left_fist.y = face.y + 200;
-                // left_fist.rotation = 0;
+                left_fist.rotation = 0;
             }
 
             if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.E))
             {
                 right_fist.x = face.x + 100;
                 right_fist.y = face.y + 50;
+                right_fist.rotation = -100/360f;
             }
             else
             {
                 right_fist.x = face.x + 200;
                 right_fist.y = face.y + 200;
+                right_fist.rotation = 0.0f;
             }
 
             // TODO: Add your update logic here
