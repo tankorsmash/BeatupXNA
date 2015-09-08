@@ -50,6 +50,10 @@ namespace BeatupXNA
             return new Point(x, y);
         }
 
+        /// <summary>
+        /// size of sprite scaled up
+        /// </summary>
+        /// <returns></returns>
         public Point GetContentSize()
         {
             return new Point(
@@ -58,6 +62,10 @@ namespace BeatupXNA
                 );
         }
 
+        /// <summary>
+        /// scaled up sprite rect offset to the center of the sprite
+        /// </summary>
+        /// <returns></returns>
         public Rectangle GetDrawableRect()
         {
             Point content_size = GetContentSize();
@@ -73,8 +81,6 @@ namespace BeatupXNA
 
         public void Draw (SpriteBatch sb)
         {
-
-
             Rectangle rect = GetDrawableRect();
             sb.Draw(sheet, rect, region.Bounds, Color.White);
         }
