@@ -3,3 +3,4 @@ C:\Users\Primary\Documents\Visual Studio 2013\Projects\BeatupXNA\ThirdPartyNinja
 C:\Users\Primary\Documents\Visual Studio 2013\Projects\BeatupXNA\ThirdPartyNinjas.XnaUtility\ThirdPartyNinjas.XnaUtility\obj\Xbox 360\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Primary\Documents\Visual Studio 2013\Projects\BeatupXNA\ThirdPartyNinjas.XnaUtility\ThirdPartyNinjas.XnaUtility\obj\Xbox 360\Debug\ThirdPartyNinjas.XnaUtility.dll
 C:\Users\Primary\Documents\Visual Studio 2013\Projects\BeatupXNA\ThirdPartyNinjas.XnaUtility\ThirdPartyNinjas.XnaUtility\obj\Xbox 360\Debug\ThirdPartyNinjas.XnaUtility.pdb
+C:\Users\Primary\Documents\Visual Studio 2013\Projects\BeatupXNA\ThirdPartyNinjas.XnaUtility\ThirdPartyNinjas.XnaUtility\obj\Xbox 360\Debug\ThirdPartyNinjas.XnaUtility.Xbox360.csprojResolveAssemblyReference.cache

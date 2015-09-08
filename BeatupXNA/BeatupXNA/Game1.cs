@@ -5,6 +5,55 @@ using ThirdPartyNinjas.XnaUtility;
 
 namespace BeatupXNA
 {
+    public class Camera2d
+    {
+        protected float _zoom; // Camera Zoom
+        public Matrix _transform; // Matrix Transform
+        public Vector2 _pos; // Camera Position
+        protected float _rotation; // Camera Rotation
+
+        public Camera2d()
+        {
+            _zoom = 1.0f;
+            _rotation = 0.0f;
+            _pos = Vector2.Zero;
+        }
+
+        // Sets and gets zoom
+        public float Zoom
+        {
+            get { return _zoom; }
+            set { _zoom = value; if (_zoom < 0.1f) _zoom = 0.1f; } // Negative zoom will flip image
+        }
+
+        public float Rotation
+        {
+            get { return _rotation; }
+            set { _rotation = value; }
+        }
+
+        // Auxiliary function to move the camera
+        public void Move(Vector2 amount)
+        {
+            _pos += amount;
+        }
+        // Get set position
+        public Vector2 Pos
+        {
+            get { return _pos; }
+            set { _pos = value; }
+        }
+        public Matrix get_transformation(GraphicsDevice graphicsDevice)
+        {
+            Viewport viewport = graphicsDevice.Viewport;
+            _transform =       // Thanks to o KB o for this solution
+              Matrix.CreateTranslation(new Vector3(-_pos.X, -_pos.Y, 0)) *
+                                         Matrix.CreateRotationZ(Rotation) *
+                                         Matrix.CreateScale(new Vector3(Zoom, Zoom, 1)) *
+                                         Matrix.CreateTranslation(new Vector3(viewport.Width * 0.5f, viewport.Height * 0.5f, 0));
+            return _transform;
+        }
+    }
     public class Clock
     {
         private float time_elapsed;
@@ -111,6 +160,8 @@ namespace BeatupXNA
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        Camera2d camera;
+
         private Sprite face;
         public Sprite left_fist;
         public Sprite right_fist;
@@ -162,6 +213,8 @@ namespace BeatupXNA
             right_fist.x = face.x + 200;
             right_fist.y = face.y + 200;
 
+            camera = new Camera2d();
+            camera.Pos = new Vector2(graphics.GraphicsDevice.Viewport.Width/2, graphics.GraphicsDevice.Viewport.Height/2);
 
             // TODO: use this.Content to load your game content here
         }
@@ -192,6 +245,10 @@ namespace BeatupXNA
             if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Escape))
             {
                 this.Exit();
+            }
+
+            if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.S))
+            {
             }
 
             if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Q))
@@ -232,8 +289,29 @@ namespace BeatupXNA
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
+            //Matrix camera = new Matrix(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1);
+            Viewport viewport = GraphicsDevice.Viewport;
+            //Matrix camera =  Matrix.CreateOrthographicOffCenter(0, viewport.Width, viewport.Height, 0, 0, 1);
+            //Matrix camera = Matrix.CreateLookAt()
+
+            // cam.Zoom = 2.0f // Example of Zoom in
+            // cam.Zoom = 0.5f // Example of Zoom out
+
+            //// if using XNA 4.0
+            spriteBatch.Begin(SpriteSortMode.BackToFront,
+                                    BlendState.AlphaBlend,
+                                    SamplerState.PointClamp, 
+                                    null,
+                                    null,
+                                    null,
+                                    camera.get_transformation(graphics.GraphicsDevice));
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.NonPremultiplied, SamplerState.PointClamp, DepthStencilState.Default, RasterizerState.CullNone);
+ //           spriteBatch.Begin(SpriteSortMode.BackToFront,
+ //               BlendState.NonPremultiplied,
+ //SamplerState.PointClamp,
+ //DepthStencilState.Default,
+ //RasterizerState.CullNone,
+ //null, camera);
 
             left_fist.Draw(spriteBatch);
             right_fist.Draw(spriteBatch);
