@@ -21,6 +21,8 @@ namespace BeatupXNA
         TextureAtlas atlas;
         Texture2D sheet;
 
+        public float rotation;
+
         string name;
         TextureRegion region;
 
@@ -44,6 +46,7 @@ namespace BeatupXNA
             y = 0;
 
             flippedX = false;
+            rotation = 0;
 
             scale_x = 4.0f;
             scale_y = 4.0f;
@@ -86,7 +89,7 @@ namespace BeatupXNA
         public void Draw (SpriteBatch sb)
         {
             Rectangle rect = GetDrawableRect();
-            sb.Draw(sheet, rect, region.Bounds, Color.White, 0, Vector2.Zero, flippedX ? SpriteEffects.FlipHorizontally : SpriteEffects.None, 0);
+            sb.Draw(sheet, rect, region.Bounds, Color.White, rotation, Vector2.Zero, flippedX ? SpriteEffects.FlipHorizontally : SpriteEffects.None, 0);
         }
     };
 
@@ -175,9 +178,35 @@ namespace BeatupXNA
             {
                 this.Exit();
             }
-            else if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Escape))
+
+            if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Escape))
             {
                 this.Exit();
+            }
+
+            if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Q))
+            {
+                // left_fist.x = 5;
+                left_fist.x = face.x - 100;
+                left_fist.y = face.y + 50;
+                // left_fist.rotation = -0.5f;
+            }
+            else
+            {
+                left_fist.x = face.x - 200;
+                left_fist.y = face.y + 200;
+                // left_fist.rotation = 0;
+            }
+
+            if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.E))
+            {
+                right_fist.x = face.x + 100;
+                right_fist.y = face.y + 50;
+            }
+            else
+            {
+                right_fist.x = face.x + 200;
+                right_fist.y = face.y + 200;
             }
 
             // TODO: Add your update logic here
@@ -194,9 +223,9 @@ namespace BeatupXNA
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.NonPremultiplied, SamplerState.PointClamp, DepthStencilState.Default, RasterizerState.CullNone);
 
-            face.Draw(spriteBatch);
             left_fist.Draw(spriteBatch);
             right_fist.Draw(spriteBatch);
+            face.Draw(spriteBatch);
 
             spriteBatch.End();
 
