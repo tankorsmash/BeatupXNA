@@ -41,13 +41,41 @@ namespace BeatupXNA
             x = 0;
             y = 0;
 
-            scale_x = 2.0f;
-            scale_y = 2.0f;
+            scale_x = 4.0f;
+            scale_y = 4.0f;
+        }
+
+        public Point _GetRawPosition()
+        {
+            return new Point(x, y);
+        }
+
+        public Point GetContentSize()
+        {
+            return new Point(
+                region.Bounds.Width * (int)scale_x,
+                region.Bounds.Height * (int)scale_y
+                );
+        }
+
+        public Rectangle GetDrawableRect()
+        {
+            Point content_size = GetContentSize();
+            int scaled_x = content_size.X;
+            int scaled_y = content_size.Y;
+
+            Point raw_pos = _GetRawPosition();
+            int draw_x = raw_pos.X - scaled_x / 2;
+            int draw_y = raw_pos.Y - scaled_y / 2;
+
+            return new Rectangle(draw_x, draw_y, scaled_x, scaled_y);
         }
 
         public void Draw (SpriteBatch sb)
         {
-            Rectangle rect = new Rectangle(x, y, region.Bounds.Width*(int)scale_x, region.Bounds.Height*(int)scale_y);
+
+
+            Rectangle rect = GetDrawableRect();
             sb.Draw(sheet, rect, region.Bounds, Color.White);
         }
     };
