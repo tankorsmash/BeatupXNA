@@ -61,11 +61,16 @@
     <XnaCompressContent>false</XnaCompressContent>
   </PropertyGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\ThirdPartyNinjas.XnaUtility\ThirdPartyNinjas.XnaUtility.Content\ThirdPartyNinjas.XnaUtility.Content.csproj">
+      <Project>{2588e0ce-3d79-48d4-9999-519435ec690d}</Project>
+      <Name>ThirdPartyNinjas.XnaUtility.Content</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\ThirdPartyNinjas.XnaUtility\ThirdPartyNinjas.XnaUtility\ThirdPartyNinjas.XnaUtility.Windows.csproj">
       <Project>{4e64a11c-6561-48db-8ad0-254b3b906d65}</Project>
       <Name>ThirdPartyNinjas.XnaUtility.Windows</Name>
     </ProjectReference>
     <ProjectReference Include="..\BeatupXNAContent\BeatupXNAContent.contentproj">
+      <Project>{A7313DCC-5FBB-43DF-8C33-64335FD3A146}</Project>
       <Name>BeatupXNAContent</Name>
       <XnaReferenceType>Content</XnaReferenceType>
     </ProjectReference>

@@ -1,12 +1,8 @@
-using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
-using System.Linq;
 using System.Web.Script.Serialization;
-using System.Xml;
 using System.Xml.Linq;
-
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content.Pipeline;
 
@@ -30,7 +26,7 @@ namespace ThirdPartyNinjas.XnaUtility.Content
 		{
 			Regions = new Dictionary<string, TextureRegionContent>();
 
-			System.IO.StreamReader sr = new System.IO.StreamReader(fileName);
+			StreamReader sr = new StreamReader(fileName);
 			string jsonText = sr.ReadToEnd();
 			sr.Close();
 			sr.Dispose();

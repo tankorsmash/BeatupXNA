@@ -1,5 +1,3 @@
-using System;
-
 namespace BeatupXNA
 {
 #if WINDOWS || XBOX
