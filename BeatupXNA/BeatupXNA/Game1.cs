@@ -117,7 +117,11 @@ namespace BeatupXNA
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            this.graphics.PreferMultiSampling = false;
+            this.graphics.PreferredBackBufferHeight = 640;
+            this.graphics.PreferredBackBufferWidth = 960;
+            this.graphics.ApplyChanges();
+
+            this.IsMouseVisible = true;
 
             base.Initialize();
         }
