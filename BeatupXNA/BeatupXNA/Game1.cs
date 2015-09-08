@@ -24,8 +24,11 @@ namespace BeatupXNA
         string name;
         TextureRegion region;
 
-        int x;
-        int y;
+        public int x;
+        public int y;
+
+        public float scale_x;
+        public float scale_y;
 
         public Sprite (Game1 game, string atlas_name, string sheet_name, string sprite_name) 
         {
@@ -37,11 +40,14 @@ namespace BeatupXNA
 
             x = 0;
             y = 0;
+
+            scale_x = 2.0f;
+            scale_y = 2.0f;
         }
 
         public void Draw (SpriteBatch sb)
         {
-            Rectangle rect = new Rectangle(x, y, region.Bounds.Width, region.Bounds.Height);
+            Rectangle rect = new Rectangle(x, y, region.Bounds.Width*(int)scale_x, region.Bounds.Height*(int)scale_y);
             sb.Draw(sheet, rect, region.Bounds, Color.White);
         }
     };
@@ -53,6 +59,8 @@ namespace BeatupXNA
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+
+        private Sprite face;
 
         public Game1()
         {
@@ -69,6 +77,7 @@ namespace BeatupXNA
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            this.graphics.PreferMultiSampling = false;
 
             base.Initialize();
         }
@@ -81,6 +90,12 @@ namespace BeatupXNA
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            face = new Sprite(this, "face_xml", "facepng", "s_baby.png");
+
+            face.x = this.GraphicsDevice.Viewport.Width/2;
+            face.y = this.GraphicsDevice.Viewport.Height/2;
+
 
             // TODO: use this.Content to load your game content here
         }
@@ -124,11 +139,9 @@ namespace BeatupXNA
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
+            spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.NonPremultiplied, SamplerState.PointClamp, DepthStencilState.Default, RasterizerState.CullNone);
 
-            Sprite sprite = new Sprite(this, "face_xml", "facepng", "s_baby.png");
-
-            spriteBatch.Begin();
-            sprite.Draw(spriteBatch);
+            face.Draw(spriteBatch);
             spriteBatch.End();
 
             // TODO: Add your drawing code here
