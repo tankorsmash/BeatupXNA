@@ -1,3 +1,5 @@
+using System;
+using System.Security.Cryptography;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -249,6 +251,17 @@ namespace BeatupXNA
 
             if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.S))
             {
+                Random rand = new Random();
+                camera.Pos = new Vector2(camera.Pos.X + rand.Next(-10, 10), camera.Pos.Y + rand.Next(-10, 10));
+                Viewport viewport = graphics.GraphicsDevice.Viewport;
+                int intensity = 5;
+                camera.Pos = new Vector2(viewport.Width/2+ rand.Next(-intensity, intensity), viewport.Height/2+ rand.Next(-intensity, intensity));
+            }
+            else
+            {
+
+                Viewport viewport = graphics.GraphicsDevice.Viewport;
+                camera.Pos = new Vector2(viewport.Width/2, viewport.Height/2);
             }
 
             if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Q))
