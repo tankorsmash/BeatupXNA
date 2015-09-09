@@ -15,14 +15,6 @@ namespace BeatupXNA
         string name;
         TextureRegion region;
 
-        public int x;
-        public int y;
-
-        public bool flippedX;
-
-        public float scale_x;
-        public float scale_y;
-
         public Sprite (Beatup game, string atlas_name, string sheet_name, string sprite_name) 
         {
 
@@ -31,8 +23,8 @@ namespace BeatupXNA
 
             sheet = game.Content.Load<Texture2D>(sheet_name);
 
-            x = 0;
-            y = 0;
+            this.position.X = 0;
+            this.position.Y = 0;
 
             flippedX = false;
             rotation = 0;
@@ -43,7 +35,7 @@ namespace BeatupXNA
 
         public Point _GetRawPosition()
         {
-            return new Point(x, y);
+            return new Point(this.position.X, this.position.Y);
         }
 
         /// <summary>
@@ -78,7 +70,8 @@ namespace BeatupXNA
         public void Draw (SpriteBatch sb)
         {
             Rectangle rect = GetDrawableRect();
-            sb.Draw(sheet, rect, region.Bounds, Color.White, rotation, new Vector2(0.5f, 0.5f), flippedX ? SpriteEffects.FlipHorizontally : SpriteEffects.None, 0);
+            sb.Draw(sheet, rect, region.Bounds, Color.White, rotation, new Vector2(0.5f, 0.5f),
+                flippedX ? SpriteEffects.FlipHorizontally : SpriteEffects.None, 0);
         }
     };
 }

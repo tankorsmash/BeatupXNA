@@ -17,6 +17,9 @@ namespace BeatupXNA
         public bool is_visible;
 
         public List<Node> children;
+        public float scale_x;
+        public float scale_y;
+        public bool flippedX;
 
         public void addChild(Node child)
         {
@@ -45,6 +48,8 @@ namespace BeatupXNA
                 string right_path, string hit_path)
         {
             this.NeutralSprite = new Sprite(beatup, "face_xml", "facepng", neutral_path);
+            this.NeutralSprite.scale_x = 8.0f;
+            this.NeutralSprite.scale_y = 8.0f;
             this.LeftSprite = new Sprite(beatup, "face_xml", "facepng", left_path);
             this.RightSprite = new Sprite(beatup, "face_xml", "facepng", right_path);
 
@@ -128,13 +133,13 @@ namespace BeatupXNA
             face.position.Y = this.GraphicsDevice.Viewport.Height/2;
 
             left_fist = new Sprite(this, "face_xml", "facepng", "fist_neutral.png");
-            left_fist.x = face.position.X - 200;
-            left_fist.y = face.position.Y + 200;
+            left_fist.position.X = face.position.X - 200;
+            left_fist.position.Y = face.position.Y + 200;
             left_fist.flippedX = true;
 
             right_fist = new Sprite(this, "face_xml", "facepng", "fist_neutral.png");
-            right_fist.x = face.position.X + 200;
-            right_fist.y = face.position.Y + 200;
+            right_fist.position.X = face.position.X + 200;
+            right_fist.position.Y = face.position.Y + 200;
 
             camera = new Camera2d();
             camera.Pos = new Vector2(graphics.GraphicsDevice.Viewport.Width/2, graphics.GraphicsDevice.Viewport.Height/2);
@@ -183,31 +188,31 @@ namespace BeatupXNA
             if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Q))
             {
                 // left_fist.x = 5;
-                left_fist.x = face.position.X - 100;
-                left_fist.y = face.position.Y + 50;
+                left_fist.position.X = face.position.X - 100;
+                left_fist.position.Y = face.position.Y + 50;
                 left_fist.rotation = 100/360f;
                 int intensity = 5;
                 ShakeCamera(intensity);
             }
             else
             {
-                left_fist.x = face.position.X - 200;
-                left_fist.y = face.position.Y + 200;
+                left_fist.position.X = face.position.X - 200;
+                left_fist.position.Y = face.position.Y + 200;
                 left_fist.rotation = 0;
             }
 
             if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.E))
             {
-                right_fist.x = face.position.X + 100;
-                right_fist.y = face.position.Y + 50;
+                right_fist.position.X = face.position.X + 100;
+                right_fist.position.Y = face.position.Y + 50;
                 right_fist.rotation = -100/360f;
                 int intensity = 5;
                 ShakeCamera(intensity);
             }
             else
             {
-                right_fist.x = face.position.X + 200;
-                right_fist.y = face.position.Y + 200;
+                right_fist.position.X = face.position.X + 200;
+                right_fist.position.Y = face.position.Y + 200;
                 right_fist.rotation = 0.0f;
             }
 
