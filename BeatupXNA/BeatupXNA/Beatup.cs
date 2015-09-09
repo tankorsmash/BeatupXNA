@@ -6,6 +6,51 @@ using Microsoft.Xna.Framework.Input;
 
 namespace BeatupXNA
 {
+    public class FaceStage
+    {
+        public Sprite NeutralSprite;
+        public Sprite LeftSprite;
+        public Sprite RightSprite;
+        public Sprite HitSprite;
+
+        public enum FaceStageType
+        {
+            Healthy,
+            Hurt,
+            Wounded,
+            Dead
+        }
+
+        private FaceStageType type;
+
+        public FaceStage(Beatup beatup, //FaceStageType type,
+                string neutral_path, string left_path,
+                string right_path, string hit_path)
+        {
+            this.NeutralSprite = new Sprite(beatup, "face_xml", "facepng", neutral_path);
+            this.LeftSprite = new Sprite(beatup, "face_xml", "facepng", left_path);
+            this.RightSprite = new Sprite(beatup, "face_xml", "facepng", right_path);
+
+            this.HitSprite = new Sprite(beatup, "face_xml", "facepng", hit_path);
+        }
+    }
+
+    public class Face
+    {
+        private FaceStage healthy_stage;
+        private FaceStage hurt_stage;
+        private FaceStage wounded_stage;
+        private FaceStage dead_stage;
+
+        public Face (Beatup beatup)
+        {
+            this.healthy_stage = new FaceStage(beatup, "f_face_neutral.png", "f_look_left.png", "f_look_right.png", "f_gritted_teeth.png");
+            this.hurt_stage = new FaceStage(beatup, "f_teeth.png", "f_look_left.png", "f_look_right.png", "f_teeth_side.png");
+            this.wounded_stage = new FaceStage(beatup, "f_teeth_one.png", "f_look_left_teeth.png", "f_look_right_teeth.png", "f_teeth_side_one.png");
+            this.dead_stage = new FaceStage(beatup, "f_face_neutral_eye.png", "f_face_neutral_eye.png", "f_look_left_eye.png", "f_look_right_eye.png");
+        }
+    }
+
     /// <summary>
     /// This is the main type for your game
     /// </summary>
