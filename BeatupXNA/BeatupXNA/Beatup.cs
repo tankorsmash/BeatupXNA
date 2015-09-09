@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Security.Cryptography;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -14,6 +15,13 @@ namespace BeatupXNA
         public Vector2 scale;
 
         public bool is_visible;
+
+        public List<Node> children;
+
+        public void addChild(Node child)
+        {
+            children.Add(child);
+        }
     }
     public class FaceStage
     {
@@ -62,6 +70,7 @@ namespace BeatupXNA
         //public void Draw
         public void Draw(SpriteBatch sb)
         {
+            this.healthy_stage.NeutralSprite.position = this.position;
             this.healthy_stage.NeutralSprite.Draw(sb);
         }
     }
@@ -222,37 +231,16 @@ namespace BeatupXNA
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            //Matrix camera = new Matrix(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1);
-            Viewport viewport = GraphicsDevice.Viewport;
-            //Matrix camera =  Matrix.CreateOrthographicOffCenter(0, viewport.Width, viewport.Height, 0, 0, 1);
-            //Matrix camera = Matrix.CreateLookAt()
+            spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, SamplerState.PointClamp, 
+                                    null, null, null, camera.get_transformation(graphics.GraphicsDevice));
 
-            // cam.Zoom = 2.0f // Example of Zoom in
-            // cam.Zoom = 0.5f // Example of Zoom out
-
-            //// if using XNA 4.0
-            spriteBatch.Begin(SpriteSortMode.BackToFront,
-                                    BlendState.AlphaBlend,
-                                    SamplerState.PointClamp, 
-                                    null,
-                                    null,
-                                    null,
-                                    camera.get_transformation(graphics.GraphicsDevice));
             GraphicsDevice.Clear(Color.CornflowerBlue);
- //           spriteBatch.Begin(SpriteSortMode.BackToFront,
- //               BlendState.NonPremultiplied,
- //SamplerState.PointClamp,
- //DepthStencilState.Default,
- //RasterizerState.CullNone,
- //null, camera);
 
             left_fist.Draw(spriteBatch);
             right_fist.Draw(spriteBatch);
             face.Draw(spriteBatch);
 
             spriteBatch.End();
-
-            // TODO: Add your drawing code here
 
             base.Draw(gameTime);
         }
