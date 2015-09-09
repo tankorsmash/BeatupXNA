@@ -6,6 +6,15 @@ using Microsoft.Xna.Framework.Input;
 
 namespace BeatupXNA
 {
+    public class Node
+    {
+        public Point position;
+
+        public Vector2 rotation;
+        public Vector2 scale;
+
+        public bool is_visible;
+    }
     public class FaceStage
     {
         public Sprite NeutralSprite;
@@ -35,7 +44,7 @@ namespace BeatupXNA
         }
     }
 
-    public class Face
+    public class Face : Node
     {
         private FaceStage healthy_stage;
         private FaceStage hurt_stage;
@@ -49,6 +58,12 @@ namespace BeatupXNA
             this.wounded_stage = new FaceStage(beatup, "f_teeth_one.png", "f_look_left_teeth.png", "f_look_right_teeth.png", "f_teeth_side_one.png");
             this.dead_stage = new FaceStage(beatup, "f_face_neutral_eye.png", "f_face_neutral_eye.png", "f_look_left_eye.png", "f_look_right_eye.png");
         }
+
+        //public void Draw
+        public void Draw(SpriteBatch sb)
+        {
+            this.healthy_stage.NeutralSprite.Draw(sb);
+        }
     }
 
     /// <summary>
@@ -61,7 +76,7 @@ namespace BeatupXNA
 
         Camera2d camera;
 
-        private Sprite face;
+        private Face face;
         public Sprite left_fist;
         public Sprite right_fist;
 
@@ -98,19 +113,19 @@ namespace BeatupXNA
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            face = new Sprite(this, "face_xml", "facepng", "s_baby.png");
+            face = new Face(this);
 
-            face.x = this.GraphicsDevice.Viewport.Width/2;
-            face.y = this.GraphicsDevice.Viewport.Height/2;
+            face.position.X = this.GraphicsDevice.Viewport.Width/2;
+            face.position.Y = this.GraphicsDevice.Viewport.Height/2;
 
             left_fist = new Sprite(this, "face_xml", "facepng", "fist_neutral.png");
-            left_fist.x = face.x - 200;
-            left_fist.y = face.y + 200;
+            left_fist.x = face.position.X - 200;
+            left_fist.y = face.position.Y + 200;
             left_fist.flippedX = true;
 
             right_fist = new Sprite(this, "face_xml", "facepng", "fist_neutral.png");
-            right_fist.x = face.x + 200;
-            right_fist.y = face.y + 200;
+            right_fist.x = face.position.X + 200;
+            right_fist.y = face.position.Y + 200;
 
             camera = new Camera2d();
             camera.Pos = new Vector2(graphics.GraphicsDevice.Viewport.Width/2, graphics.GraphicsDevice.Viewport.Height/2);
@@ -159,31 +174,31 @@ namespace BeatupXNA
             if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Q))
             {
                 // left_fist.x = 5;
-                left_fist.x = face.x - 100;
-                left_fist.y = face.y + 50;
+                left_fist.x = face.position.X - 100;
+                left_fist.y = face.position.Y + 50;
                 left_fist.rotation = 100/360f;
                 int intensity = 5;
                 ShakeCamera(intensity);
             }
             else
             {
-                left_fist.x = face.x - 200;
-                left_fist.y = face.y + 200;
+                left_fist.x = face.position.X - 200;
+                left_fist.y = face.position.Y + 200;
                 left_fist.rotation = 0;
             }
 
             if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.E))
             {
-                right_fist.x = face.x + 100;
-                right_fist.y = face.y + 50;
+                right_fist.x = face.position.X + 100;
+                right_fist.y = face.position.Y + 50;
                 right_fist.rotation = -100/360f;
                 int intensity = 5;
                 ShakeCamera(intensity);
             }
             else
             {
-                right_fist.x = face.x + 200;
-                right_fist.y = face.y + 200;
+                right_fist.x = face.position.X + 200;
+                right_fist.y = face.position.Y + 200;
                 right_fist.rotation = 0.0f;
             }
 

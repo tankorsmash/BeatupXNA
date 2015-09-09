@@ -4,7 +4,7 @@ using ThirdPartyNinjas.XnaUtility;
 
 namespace BeatupXNA
 {
-    public class Sprite
+    public class Sprite : Node
     {
         private Beatup game;
         TextureAtlas atlas;
