@@ -251,11 +251,6 @@ namespace BeatupXNA
 
             if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.S))
             {
-                Random rand = new Random();
-                camera.Pos = new Vector2(camera.Pos.X + rand.Next(-10, 10), camera.Pos.Y + rand.Next(-10, 10));
-                Viewport viewport = graphics.GraphicsDevice.Viewport;
-                int intensity = 5;
-                camera.Pos = new Vector2(viewport.Width/2+ rand.Next(-intensity, intensity), viewport.Height/2+ rand.Next(-intensity, intensity));
             }
             else
             {
@@ -270,6 +265,8 @@ namespace BeatupXNA
                 left_fist.x = face.x - 100;
                 left_fist.y = face.y + 50;
                 left_fist.rotation = 100/360f;
+                int intensity = 5;
+                ShakeCamera(intensity);
             }
             else
             {
@@ -283,6 +280,8 @@ namespace BeatupXNA
                 right_fist.x = face.x + 100;
                 right_fist.y = face.y + 50;
                 right_fist.rotation = -100/360f;
+                int intensity = 5;
+                ShakeCamera(intensity);
             }
             else
             {
@@ -294,6 +293,15 @@ namespace BeatupXNA
             // TODO: Add your update logic here
 
             base.Update(gameTime);
+        }
+
+        public void ShakeCamera(int intensity)
+        {
+            Random rand = new Random();
+            camera.Pos = new Vector2(camera.Pos.X + rand.Next(-10, 10), camera.Pos.Y + rand.Next(-10, 10));
+            Viewport viewport = graphics.GraphicsDevice.Viewport;
+            camera.Pos = new Vector2(viewport.Width/2 + rand.Next(-intensity, intensity),
+                viewport.Height/2 + rand.Next(-intensity, intensity));
         }
 
         /// <summary>
